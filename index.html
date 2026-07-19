@@ -15,6 +15,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FinancialService","name":"ASAP Lending","url":"https://carlos007barragan-jpg.github.io/asaplending/","telephone":"+19135132656","address":{"@type":"PostalAddress","streetAddress":"7017 Oak Street","addressLocality":"Kansas City","addressRegion":"MO","addressCountry":"US"},"areaServed":["Missouri","Kansas","Florida","Texas","Arkansas","Nebraska"],"description":"Private asset-based lending for real estate investors: fix & flip, DSCR rental, and construction financing with terms tailored to each deal."}
 </script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What kinds of financing do you offer?","acceptedAnswer":{"@type":"Answer","text":"Multiple models: asset-based fix & flip capital, DSCR rental loans, construction and rehab financing with draws, and custom structures."}},{"@type":"Question","name":"Where do you lend?","acceptedAnswer":{"@type":"Answer","text":"Missouri, Kansas, Florida, Texas, Arkansas, and Nebraska — headquartered in Kansas City."}},{"@type":"Question","name":"Do you check credit or income?","acceptedAnswer":{"@type":"Answer","text":"The deal carries the weight. Asset-based underwriting qualifies the property and the plan — self-employed and full-time investors welcome."}},{"@type":"Question","name":"How fast can you close?","acceptedAnswer":{"@type":"Answer","text":"Days on clean deals — no bank underwriting queue."}}]}</script>
 <style>
 :root{--bg:#FFFFFF;--soft:#F6F7F9;--ink:#101828;--mut:#5D6B82;--line:#E7EAF0;--gold:#C9962E;--gold2:#A87C1F;--navy:#101828;--green:#12805C}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -155,13 +156,23 @@ footer a{color:var(--mut);text-decoration:none}
   h2.title{font-size:31px}.band h2{font-size:34px}
   section{padding:52px 0}.sticky-call{display:block}
 }
+
+.burger{display:none;margin-left:auto;background:none;border:1px solid var(--line);border-radius:9px;color:var(--ink);font-size:20px;width:42px;height:42px;cursor:pointer}
+@media(max-width:900px){
+.burger{display:grid;place-items:center}
+nav .links{display:none}
+body.navopen nav .links{display:flex;position:fixed;top:72px;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;gap:0;padding:10px 20px 20px;border-bottom:1px solid var(--line);box-shadow:0 30px 50px -20px rgba(0,0,0,.35);z-index:49}
+body.navopen nav .links a{display:block!important;padding:14px 4px;font-size:15px;border-bottom:1px solid var(--line)}
+body.navopen nav .links a.cta{margin-top:10px;text-align:center;border-bottom:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 
 <nav><div class="wrap">
   <a class="logo" href="/">ASAP<span>LENDING</span></a>
-  <div class="links">
+  <button class="burger" aria-label="Menu" onclick="document.body.classList.toggle('navopen')">☰</button><div class="links">
     <a href="#models">Financing</a><a href="#states">Where We Lend</a><a href="#how">Process</a><a href="#work">Our Work</a><a href="#visit">Visit Us</a><a href="tel:+19135132656" style="color:var(--gold2)">913.513.2656</a><a href="#deal" class="cta">Submit a Deal</a>
   </div>
 </div></nav>
@@ -341,6 +352,9 @@ function sendLead(f,src){
 }
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+<script>
+document.querySelectorAll('nav .links a').forEach(a=>a.addEventListener('click',()=>document.body.classList.remove('navopen')));
 </script>
 </body>
 </html>
