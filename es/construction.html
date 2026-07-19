@@ -126,6 +126,62 @@ section{padding:46px 0}}
 </div>
 <p style="font-size:12.5px;color:#8A8070;margin-top:14px">Prestamos en Missouri, Kansas, Texas, Florida, Tennessee y Ohio.</p>
 </div></section>
+
+<section id="costcalc" style="background:#fff"><div class="wrap" style="max-width:920px">
+<div class="kick" style="color:var(--gold2)">Herramienta de Escenarios</div>
+<h2>Lo que realmente cuesta el financiamiento</h2>
+<p style="max-width:640px;margin-top:8px;color:#5A5346">El hard money se cobra por velocidad y apalancamiento, no por esperar. Modele su proyecto: tasa, puntos y meses — vea el costo total del financiamiento y cu&aacute;nto queda del margen.</p>
+<div style="background:#FBFAF6;border:1px solid #E5DFD2;border-radius:14px;padding:26px;margin-top:20px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px">
+<label style="font-size:12px;color:#5A5346">Compra<input id="cc-buy" type="number" value="120000" style="width:100%;padding:11px;margin-top:5px;border:1px solid #E5DFD2"></label>
+<label style="font-size:12px;color:#5A5346">Renovaci&oacute;n<input id="cc-rehab" type="number" value="35000" style="width:100%;padding:11px;margin-top:5px;border:1px solid #E5DFD2"></label>
+<label style="font-size:12px;color:#5A5346">ARV<input id="cc-arv" type="number" value="220000" style="width:100%;padding:11px;margin-top:5px;border:1px solid #E5DFD2"></label>
+<label style="font-size:12px;color:#5A5346">Enganche %<input id="cc-down" type="number" value="20" style="width:100%;padding:11px;margin-top:5px;border:1px solid #E5DFD2"></label>
+<label style="font-size:12px;color:#5A5346">Tasa %<input id="cc-rate" type="number" step="0.5" value="12" style="width:100%;padding:11px;margin-top:5px;border:1px solid #E5DFD2"></label>
+<label style="font-size:12px;color:#5A5346">Puntos<input id="cc-pts" type="number" step="0.5" value="2" style="width:100%;padding:11px;margin-top:5px;border:1px solid #E5DFD2"></label>
+<label style="font-size:12px;color:#5A5346">Meses<input id="cc-mo" type="number" value="6" style="width:100%;padding:11px;margin-top:5px;border:1px solid #E5DFD2"></label>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-top:22px">
+<div><div style="font-size:12px;color:#8A8070">Monto del pr&eacute;stamo</div><div style="font-family:'Cormorant Garamond',serif;font-size:26px" id="cc-loan">$—</div></div>
+<div><div style="font-size:12px;color:#8A8070">Pago mensual de inter&eacute;s</div><div style="font-family:'Cormorant Garamond',serif;font-size:26px" id="cc-mpay">$—</div></div>
+<div><div style="font-size:12px;color:#8A8070">Costo total del financiamiento</div><div style="font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold2)" id="cc-cost">$—</div></div>
+<div><div style="font-size:12px;color:#8A8070">Margen despu&eacute;s del financiamiento</div><div style="font-family:'Cormorant Garamond',serif;font-size:26px" id="cc-net">$—</div></div>
+</div>
+<div id="cc-flag" style="font-size:12.5px;margin-top:12px;font-weight:600"></div>
+<div style="font-size:11.5px;color:#8A8070;margin-top:8px">Pagos mensuales de solo inter&eacute;s durante el pr&eacute;stamo, fondos de renovaci&oacute;n liberados por etapas — as&iacute; funcionan nuestros programas. Costo total = inter&eacute;s del periodo + puntos. No incluye cierre, mantenimiento ni venta. Los programas se cotizan por cr&eacute;dito y experiencia; env&iacute;e el proyecto para sus t&eacute;rminos exactos.</div>
+<a class="btn gold" href="index.html#deal" style="display:inline-block;margin-top:14px">Cotizar Mi Proyecto Exacto &rarr;</a>
+</div>
+</div></section>
+<script>
+(function(){const $=i=>document.getElementById(i);
+function cc(){const buy=+($('cc-buy').value)||0,re=+($('cc-rehab').value)||0,arv=+($('cc-arv').value)||0;
+const dn=(+($('cc-down').value)||0)/100,rt=(+($('cc-rate').value)||0)/100,pts=(+($('cc-pts').value)||0)/100,mo=+($('cc-mo').value)||0;
+const loan=Math.max(0,(buy*(1-dn))+re);
+const mpay=loan*rt/12;
+const cost=mpay*mo+loan*pts;
+const net=arv-buy-re-cost;
+$('cc-loan').textContent='$'+Math.round(loan).toLocaleString();
+$('cc-mpay').textContent='$'+Math.round(mpay).toLocaleString();
+$('cc-cost').textContent='$'+Math.round(cost).toLocaleString();
+$('cc-net').textContent=(net<0?'-$':'$')+Math.abs(Math.round(net)).toLocaleString();
+const ltv=arv>0?loan/arv:0;
+$('cc-flag').textContent=ltv>0.65?'△ El pr&eacute;stamo es '+Math.round(ltv*100)+'% del ARV — sobre el t&iacute;pico tope de 65%. Espere m&aacute;s enganche o un pr&eacute;stamo menor.':'✓ El pr&eacute;stamo es '+Math.round(ltv*100)+'% del ARV — dentro del t&iacute;pico tope de 65%.';
+$('cc-flag').style.color=ltv>0.65?'#9C2B2B':'#1E7A46';}
+['cc-buy','cc-rehab','cc-arv','cc-down','cc-rate','cc-pts','cc-mo'].forEach(i=>{const e=$(i);if(e)e.addEventListener('input',cc)});
+if($('cc-buy'))cc();})();
+</script>
+
+<section id="paths" style="background:#F5F2EA"><div class="wrap">
+<div class="kick" style="color:var(--gold2)">Bajo el Cap&oacute;</div>
+<h2>C&oacute;mo funciona el financiamiento — tres caminos</h2>
+<p style="max-width:640px;margin-top:8px;color:#5A5346">Trabajamos con una red de fuentes de capital privado, as&iacute; que una solicitud llega a varios programas. Su camino depende sobre todo del cr&eacute;dito y la experiencia:</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:22px">
+<div style="background:#fff;border:1px solid #E5DFD2;border-radius:14px;padding:22px"><b>Cr&eacute;dito fuerte (700+)</b><p style="margin-top:8px;font-size:14px">El mejor precio — tasas desde alrededor del 10%, normalmente 20% de enganche, cierres hasta en 24 horas con el expediente completo.</p></div>
+<div style="background:#fff;border:1px solid #E5DFD2;border-radius:14px;padding:22px"><b>Cr&eacute;dito flexible</b><p style="margin-top:8px;font-size:14px">Cr&eacute;dito bajo o corto con experiencia en flips: tasa m&aacute;s alta, enganche de 10&ndash;20% seg&uacute;n el perfil. El proyecto se hace igual.</p></div>
+<div style="background:#fff;border:1px solid #E5DFD2;border-radius:14px;padding:22px"><b>Basado en el activo — sin cr&eacute;dito</b><p style="margin-top:8px;font-size:14px">Evaluado 100% sobre el proyecto. Si los n&uacute;meros funcionan, no se necesita puntaje de cr&eacute;dito. Cotizado por el riesgo, hecho para la velocidad.</p></div>
+</div>
+<p style="font-size:12.5px;color:#8A8070;margin-top:16px">Todos los programas: plazos de 6 meses dise&ntilde;ados alrededor de su salida, pagos mensuales de solo inter&eacute;s, fondos de renovaci&oacute;n en escrow liberados por inspecciones, amigables con LLC, solo propiedades no ocupadas por el due&ntilde;o.</p>
+</div></section>
 <section id="dealcalc" style="background:#F5F2EA"><div class="wrap" style="max-width:860px">
 <div class="kick" style="color:var(--gold2)">Calculadora de Proyecto</div>
 <h2>Corra los n&uacute;meros de su flip</h2>
