@@ -41,8 +41,7 @@ nav .links a.cta{background:var(--ink);color:#fff;padding:11px 20px;border-radiu
 .hero{position:relative;padding:88px 0 0;background:linear-gradient(180deg,#FFFFFF 0%,#F6F7F9 100%)}
 .hero .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding-bottom:88px}
 .tagchip{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(201,150,46,.5);background:rgba(201,150,46,.08);border-radius:999px;padding:8px 18px;font-size:12px;font-weight:700;color:var(--gold2);letter-spacing:.1em;text-transform:uppercase;margin-bottom:24px}
-.tagchip:before{content:'';width:7px;height:7px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.tagchip:before{content:'';width:7px;height:7px;border-radius:50%;background:var(--gold)}
 .hero h1{font-size:66px;font-weight:700;line-height:1.0}
 .hero h1 .ol{color:transparent;-webkit-text-stroke:1.6px var(--ink)}
 .hero h1 em{font-style:normal;background:linear-gradient(100deg,var(--gold2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -53,8 +52,7 @@ nav .links a.cta{background:var(--ink);color:#fff;padding:11px 20px;border-radiu
 .hero .ph .chip small{display:block;font-weight:600;color:var(--mut);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
 /* ticker */
 .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff;overflow:hidden;padding:15px 0}
-.ticker .track{display:flex;white-space:nowrap;animation:scroll 30s linear infinite;width:max-content}
-@keyframes scroll{to{transform:translateX(-50%)}}
+.ticker .track{display:flex;flex-wrap:wrap;justify-content:center;row-gap:6px}
 .ticker span{font-family:'Space Grotesk';font-weight:600;font-size:13.5px;color:var(--mut);padding:0 26px;letter-spacing:.08em}
 .ticker b{color:var(--gold2)}
 .kick{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold2);font-weight:700;margin-bottom:14px;display:inline-flex;align-items:center;gap:12px}
@@ -65,8 +63,8 @@ section{padding:80px 0}
 /* financing models */
 .models{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
 .model{background:#fff;border:1px solid var(--line);border-radius:18px;padding:32px 30px;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s}
-.model:hover{transform:translateY(-6px);box-shadow:0 30px 60px -26px rgba(16,24,40,.25);border-color:rgba(201,150,46,.55)}
-.model .ic{width:48px;height:48px;border-radius:12px;background:linear-gradient(140deg,var(--navy),#2A3A55);color:var(--gold);display:grid;place-items:center;font-size:21px;margin-bottom:16px}
+.model:hover{border-color:rgba(201,150,46,.55);box-shadow:0 14px 34px -20px rgba(16,24,40,.18)}
+.model .ic{width:46px;height:46px;border-radius:11px;border:1.5px solid var(--line);color:var(--gold2);display:grid;place-items:center;margin-bottom:16px;background:#FBFBFC}
 .model h3{font-size:21px;font-weight:700;margin-bottom:8px}
 .model p{font-size:14.5px;color:var(--mut)}
 .model .tag{position:absolute;top:22px;right:22px;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--gold2);background:rgba(201,150,46,.1);border-radius:999px;padding:6px 12px}
@@ -84,7 +82,7 @@ section{padding:80px 0}
 /* steps */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .step{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .25s,box-shadow .25s}
-.step:hover{transform:translateY(-6px);box-shadow:0 30px 60px -26px rgba(16,24,40,.22)}
+.step:hover{box-shadow:0 14px 34px -20px rgba(16,24,40,.18)}
 .step .ph{height:168px;background-size:cover;background-position:center;position:relative}
 .step .ph:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(16,24,40,.75))}
 .step .n{position:absolute;bottom:12px;left:18px;font-family:'Space Grotesk';font-weight:700;font-size:14px;color:#F6D98A;letter-spacing:.14em;z-index:2}
@@ -127,7 +125,7 @@ footer a{color:var(--mut);text-decoration:none}
 .gal{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .g{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/3;cursor:pointer}
 .g img{width:100%;height:100%;object-fit:cover;transition:transform 6s ease;display:block}
-.g:hover img{transform:scale(1.12)}
+.g:hover img{transform:scale(1.04)}
 .g:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(16,24,40,.8))}
 .g .cap{position:absolute;bottom:14px;left:16px;z-index:2;color:#fff;font-weight:700;font-size:14px;font-family:'Space Grotesk'}
 .g .cap small{display:block;font-family:'Inter';font-weight:600;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#F6D98A}
@@ -143,19 +141,19 @@ footer a{color:var(--mut);text-decoration:none}
 .loc .row a{color:#fff;text-decoration:none;font-weight:600}
 .loc iframe{width:100%;height:100%;min-height:420px;border:0;display:block;filter:saturate(.9)}
 @media(max-width:940px){.gal{grid-template-columns:1fr 1fr}.g.wide{grid-column:span 2}.loc{grid-template-columns:1fr}.loc iframe{min-height:300px}}
-.funnel{background:linear-gradient(120deg,#C9962E,#E8C766);color:#101828;padding:70px 24px;text-align:center;position:relative;overflow:hidden}
-.funnel:before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 20%,rgba(255,255,255,.35),transparent 55%)}
+.funnel{background:var(--navy);color:#fff;padding:72px 24px;text-align:center;position:relative;overflow:hidden;border-top:3px solid var(--gold)}
 .funnel .in2{position:relative;max-width:760px;margin:0 auto}
-.funnel h2{font-size:44px;font-weight:700;line-height:1.05;margin-bottom:12px}
-.funnel p{font-size:17px;font-weight:600;opacity:.85;margin-bottom:26px}
-.funnel .btn{background:#101828;color:#fff;font-size:15px;padding:18px 40px}
-.funnel .btn:hover{background:#fff;color:#101828}
-.funnel .mini{display:flex;justify-content:center;gap:26px;margin-top:22px;flex-wrap:wrap;font-size:13px;font-weight:700}
-.funnel .mini span:before{content:'✓ ';font-weight:900}
+.funnel h2{font-size:42px;font-weight:700;line-height:1.08;margin-bottom:12px}
+.funnel h2 em{font-style:normal;color:var(--gold)}
+.funnel p{font-size:16.5px;color:#AAB4C6;margin-bottom:26px}
+.funnel .btn{background:var(--gold);color:#101828;font-size:15px;padding:18px 40px}
+.funnel .btn:hover{background:#fff}
+.funnel .mini{display:flex;justify-content:center;gap:26px;margin-top:22px;flex-wrap:wrap;font-size:12.5px;font-weight:600;color:#AAB4C6;letter-spacing:.04em}
+.funnel .mini span:before{content:'✓ ';color:var(--gold)}
 .badges{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 16px}
 .badges span{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#F6D98A;border:1px solid rgba(232,184,75,.45);background:rgba(232,184,75,.1);border-radius:999px;padding:7px 13px}
 @media(max-width:900px){.funnel h2{font-size:30px}}
-.rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.rv{opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease}
 .rv.in{opacity:1;transform:none}
 @media(max-width:940px){
   .hero .grid{grid-template-columns:1fr;padding-bottom:56px}
@@ -209,13 +207,13 @@ body.navopen nav .links a.cta{margin-top:10px;text-align:center;border-bottom:no
 <section id="models">
   <div class="wrap">
     <div class="kick">Financing Models</div>
-    <h2 class="title">Multiple ways to fund the deal</h2>
+    <h2 class="title">Financing built around the deal</h2>
     <p class="sub">Every deal is different — so are our structures. We don't publish one-size-fits-all rate sheets; we underwrite your specific deal and quote terms built for it.</p>
     <div class="models">
-      <div class="model rv"><span class="tag">Most Popular</span><div class="ic">🔨</div><h3>Fix & Flip · Asset-Based</h3><p>Acquisition and rehab capital underwritten on the property and your plan — purchase funding plus construction draws through completion.</p></div>
-      <div class="model rv"><div class="ic">🏘️</div><h3>DSCR Rental Loans</h3><p>Long-term financing for buy-and-hold investors, qualified on the property's rent coverage — not your personal income or tax returns.</p></div>
-      <div class="model rv"><div class="ic">🏗️</div><h3>Construction & Rehab</h3><p>Ground-up and heavy-rehab projects with draw schedules that keep crews moving and budgets honest.</p></div>
-      <div class="model rv"><div class="ic">📐</div><h3>Custom Structures</h3><p>Portfolios, bridge situations, creative deals — bring us the ones that don't fit a box. We structure case by case.</p></div>
+      <div class="model rv"><span class="tag">Core Program</span><div class="ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11.5 12 4l9 7.5M5.5 9.5V20h13V9.5"/><path d="M9.5 20v-6h5v6"/></svg></div><h3>Fix & Flip · Asset-Based</h3><p>Acquisition and rehab capital underwritten on the property and your plan — purchase funding plus construction draws through completion.</p></div>
+      <div class="model rv"><div class="ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="8" width="6" height="12"/><rect x="14" y="4" width="6" height="16"/><path d="M6.5 11h1M6.5 14h1M16.5 7h1M16.5 10h1M16.5 13h1"/></svg></div><h3>DSCR Rental Loans</h3><p>Long-term financing for buy-and-hold investors, qualified on the property's rent coverage — not your personal income or tax returns.</p></div>
+      <div class="model rv"><div class="ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20h16M6 20V9l6-4 6 4v11"/><path d="M10 20v-5h4v5M12 5v3"/></svg></div><h3>Construction & Rehab</h3><p>Ground-up and heavy-rehab projects with draw schedules that keep crews moving and budgets honest.</p></div>
+      <div class="model rv"><div class="ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3 4 7.5 12 12l8-4.5L12 3ZM4 12l8 4.5 8-4.5M4 16.5 12 21l8-4.5"/></svg></div><h3>Custom Structures</h3><p>Portfolio acquisitions, bridge scenarios, and non-standard deals — structured individually with clear documentation.</p></div>
     </div>
   </div>
 </section>
@@ -266,7 +264,7 @@ body.navopen nav .links a.cta{margin-top:10px;text-align:center;border-bottom:no
 
 <div class="funnel">
   <div class="in2">
-    <h2>Don't know what your deal's worth?<br>Submit it today.</h2>
+    <h2>Don't know what your deal's worth?<br><em>Submit it today.</em></h2>
     <p>Get your terms and a free ARV analysis — find out exactly how much you can get. No commitment needed.</p>
     <a class="btn" href="#deal">Submit Your Deal Now →</a>
     <div class="mini"><span>Free ARV analysis</span><span>No commitment</span><span>Same-day terms</span><span>Talk to a decision-maker</span></div>
@@ -320,10 +318,10 @@ body.navopen nav .links a.cta{margin-top:10px;text-align:center;border-bottom:no
       <div class="info">
         <h3>ASAP Lending</h3>
         <div class="sub2">Headquarters · Kansas City, Missouri</div>
-        <div class="row"><div class="ic2">📍</div><div><b>Office</b><a href="https://maps.google.com/?q=7017+Oak+Street+Kansas+City+MO" target="_blank" rel="noopener">7017 Oak Street, Kansas City, MO</a></div></div>
-        <div class="row"><div class="ic2">📞</div><div><b>Call or Text</b><a href="tel:+19135132656">(913) 513-2656</a></div></div>
-        <div class="row"><div class="ic2">⚡</div><div><b>Fastest Path</b><a href="#deal">Submit your deal online — same-day answers</a></div></div>
-        <div class="row"><div class="ic2">🗺️</div><div><b>Lending In</b><span style="color:#fff;font-weight:600">MO · KS · FL · TX · AR · NE</span></div></div>
+        <div class="row"><div class="ic2"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div><div><b>Office</b><a href="https://maps.google.com/?q=7017+Oak+Street+Kansas+City+MO" target="_blank" rel="noopener">7017 Oak Street, Kansas City, MO</a></div></div>
+        <div class="row"><div class="ic2"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg></div><div><b>Call or Text</b><a href="tel:+19135132656">(913) 513-2656</a></div></div>
+        <div class="row"><div class="ic2"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg></div><div><b>Fastest Path</b><a href="#deal">Submit your deal online — same-day answers</a></div></div>
+        <div class="row"><div class="ic2"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2ZM9 4v14M15 6v14"/></svg></div><div><b>Lending In</b><span style="color:#fff;font-weight:600">MO · KS · FL · TX · AR · NE</span></div></div>
       </div>
       <iframe src="https://www.google.com/maps?q=7017+Oak+Street,+Kansas+City,+MO&output=embed" title="ASAP Lending — 7017 Oak Street, Kansas City, MO" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
@@ -358,7 +356,7 @@ body.navopen nav .links a.cta{margin-top:10px;text-align:center;border-bottom:no
   <span style="margin-left:auto">Business-purpose loans only. All terms subject to underwriting.</span>
 </div></footer>
 
-<div class="sticky-call"><a href="tel:+19135132656">📞 Call ASAP Lending — (913) 513-2656</a></div>
+<div class="sticky-call"><a href="tel:+19135132656">Call ASAP Lending — (913) 513-2656</a></div>
 
 <script>
 document.getElementById('yr').textContent=new Date().getFullYear();
