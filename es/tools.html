@@ -89,11 +89,13 @@ section{padding:46px 0}}
 <h2>Desglose completo por programa</h2>
 <div style="background:#FBFAF6;border:1px solid #E5DFD2;border-radius:14px;padding:26px;margin-top:20px">
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px">
-<label style="font-size:12px;color:#5A5346">Programa<select id="sc-prog" style="width:100%;padding:11px;margin-top:5px;border:1px solid #E5DFD2">
-<option value="ff1">Fix &amp; Flip 1 — cr&eacute;dito 700+</option>
-<option value="ff2">Fix &amp; Flip 2 — cr&eacute;dito flexible</option>
-<option value="ff3">Fix &amp; Flip 3 — por activos, sin cr&eacute;dito</option>
+<label style="font-size:12px;color:#5A5346">Perfil del prestatario<select id="sc-prog" style="width:100%;padding:11px;margin-top:5px;border:1px solid #E5DFD2">
+<option value="ff1">Cr&eacute;dito fuerte (700+)</option>
+<option value="ff2">Cr&eacute;dito flexible</option>
+<option value="ff3">Por activos — sin cr&eacute;dito</option>
 </select></label>
+<label style="font-size:12px;color:#5A5346">Tasa % (ajuste)<input id="sc-rate" type="number" step="0.5" value="12" style="width:100%;padding:11px;margin-top:5px;border:1px solid #E5DFD2"></label>
+<label style="font-size:12px;color:#5A5346">Puntos + cuotas % (est.)<input id="sc-fees" type="number" step="0.5" value="5" style="width:100%;padding:11px;margin-top:5px;border:1px solid #E5DFD2"></label>
 <label style="font-size:12px;color:#5A5346">Precio de compra<input id="sc-buy" type="number" value="120000" style="width:100%;padding:11px;margin-top:5px;border:1px solid #E5DFD2"></label>
 <label style="font-size:12px;color:#5A5346">Presupuesto de renovaci&oacute;n<input id="sc-rehab" type="number" value="35000" style="width:100%;padding:11px;margin-top:5px;border:1px solid #E5DFD2"></label>
 <label style="font-size:12px;color:#5A5346">ARV<input id="sc-arv" type="number" value="220000" style="width:100%;padding:11px;margin-top:5px;border:1px solid #E5DFD2"></label>
@@ -123,23 +125,24 @@ section{padding:46px 0}}
 <script>
 (function(){const $=i=>document.getElementById(i);
 const PROG={
- ff1:{name:'Fix & Flip 1',rate:.10,orig:.03,pts:.02,admin:1785,down:.20,ltv:.65,note:'Cr&eacute;dito 700+ &middot; tasa 10% &middot; 3% originaci&oacute;n &middot; 2 puntos de broker &middot; $1,785 admin &middot; 20% enganche &middot; 65% LTV hasta $1M &middot; plazo 6 meses &middot; renovaci&oacute;n en desembolsos de escrow &middot; cierra desde 24 horas'},
- ff2:{name:'Fix & Flip 2',rate:.14,orig:.03,pts:.02,admin:1785,down:.20,ltv:.65,note:'Cr&eacute;dito flexible &middot; tasa 14% &middot; 3% originaci&oacute;n &middot; 2 puntos de broker &middot; $1,785 admin &middot; 10&ndash;20% enganche &middot; 65% LTV hasta $1M &middot; plazo 6 meses &middot; renovaci&oacute;n en desembolsos de escrow'},
- ff3:{name:'Fix & Flip 3',rate:.18,orig:0,pts:.03,admin:1785,down:.15,ltv:.65,note:'Sin cr&eacute;dito requerido &middot; 100% por activos &middot; tasa 18% &middot; sin originaci&oacute;n &middot; 3 puntos de broker &middot; 10&ndash;20% enganche (by evaluation) &middot; 65% LTV hasta $1M &middot; plazo 6 meses'}};
+ ff1:{down:.20,note:'Cr&eacute;dito fuerte &middot; las tasas m&aacute;s competitivas (desde ~10%) &middot; t&iacute;picamente 20% de enganche &middot; hasta 65% del ARV &middot; plazo 6 meses &middot; renovaci&oacute;n en desembolsos de escrow &middot; cierra desde 24 horas'},
+ ff2:{down:.15,note:'Cr&eacute;dito flexible &middot; tasas medias &middot; t&iacute;picamente 10&ndash;20% de enganche &middot; hasta 65% del ARV &middot; plazo 6 meses &middot; renovaci&oacute;n en desembolsos de escrow'},
+ ff3:{down:.15,note:'Sin cr&eacute;dito &middot; evaluaci&oacute;n 100% por activos &middot; t&iacute;picamente 10&ndash;20% de enganche (por evaluaci&oacute;n) &middot; hasta 65% del ARV &middot; plazo 6 meses'}};
 function money(n){return (n<0?'-$':'$')+Math.abs(Math.round(n)).toLocaleString()}
 function card(l,v,s){return '<div style="background:#fff;border:1px solid #E5DFD2;border-radius:12px;padding:16px"><div style="font-size:11.5px;color:#8A8070;text-transform:uppercase;letter-spacing:.06em">'+l+'</div><div style="font-family:\'Cormorant Garamond\',serif;font-size:28px;margin-top:4px'+(s?';color:'+s:'')+'">'+v+'</div></div>'}
 function sc(){const p=PROG[$('sc-prog').value];
 const buy=+($('sc-buy').value)||0, rehab=+($('sc-rehab').value)||0, arv=+($('sc-arv').value)||0, mo=+($('sc-mo').value)||6;
-$('sc-terms').innerHTML='<b>'+p.name+' gu&iacute;as:</b> '+p.note;
+const rate=(+($('sc-rate').value)||12)/100, feePct=(+($('sc-fees').value)||5)/100;
+$('sc-terms').innerHTML='<b>Perfil gu&iacute;as:</b> '+p.note;
 const projCost=buy+rehab;
-const loan=Math.min(projCost*(1-p.down), arv*p.ltv);
+const loan=Math.min(projCost*(1-p.down), arv*0.65);
 const cashDown=projCost-loan;
-const ptsFees=loan*(p.orig+p.pts)+p.admin;
-const carry=loan*p.rate/12*mo;
+const ptsFees=loan*feePct;
+const carry=loan*rate/12*mo;
 const totalFin=ptsFees+carry;
 const net=arv-projCost-totalFin;
-$('sc-out').innerHTML=card('Pr&eacute;stamo estimado',money(loan))+card('Su efectivo (enganche)',money(cashDown))+card('Puntos + cuotas',money(ptsFees))+card('Inter&eacute;s, '+mo+' meses',money(carry))+card('Costo total del capital',money(totalFin))+card('Neto proyectado (antes de costos de venta)',money(net),net>=0?'#1E7A46':'#9C2B2B');}
-['sc-prog','sc-buy','sc-rehab','sc-arv','sc-mo'].forEach(i=>$(i).addEventListener('input',sc));sc();
+$('sc-out').innerHTML=card('Pr&eacute;stamo estimado',money(loan))+card('Su efectivo (enganche)',money(cashDown))+card('Puntos + cuotas (est.)',money(ptsFees))+card('Inter&eacute;s, '+mo+' meses',money(carry))+card('Costo total del capital',money(totalFin))+card('Neto proyectado (antes de costos de venta)',money(net),net>=0?'#1E7A46':'#9C2B2B');}
+['sc-prog','sc-buy','sc-rehab','sc-arv','sc-mo','sc-rate','sc-fees'].forEach(i=>$(i).addEventListener('input',sc));sc();
 function dr(){const L=+($('dr-loan').value)||0,R=+($('dr-rent').value)||0,TI=+($('dr-ti').value)||0;
 let h='<tr style="text-align:left;border-bottom:2px solid #E5DFD2"><th style="padding:8px 6px">Tasa</th><th>P&amp;I / mo</th><th>PITI / mo</th><th>DSCR</th><th></th></tr>';
 [5.5,6.0,6.5,7.0,7.5,8.0,8.5].forEach(rt=>{const r=rt/100/12,n=360;const pi=L*r/(1-Math.pow(1+r,-n));const piti=pi+TI;const d=piti>0?R/piti:0;
