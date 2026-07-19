@@ -58,7 +58,7 @@ p.sub{color:var(--mut);max-width:640px;margin-bottom:34px}
 footer{border-top:1px solid var(--line);padding:32px 0;font-size:13px;color:var(--mut)}
 footer .wrap{display:flex;gap:18px;flex-wrap:wrap;align-items:center;max-width:1120px}
 footer a{color:var(--mut);text-decoration:none}
-@media(max-width:900px){
+@media(max-width:940px){
 .hero h1{font-size:32px}.grid2{grid-template-columns:1fr}
 .burger{display:grid;place-items:center}nav .links{display:none}
 body.navopen nav .links{display:flex;position:fixed;top:70px;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;gap:0;padding:10px 20px 20px;border-bottom:1px solid var(--line);z-index:49}
@@ -73,7 +73,7 @@ section{padding:46px 0}}
 .langpill:hover span{color:var(--gold2)}
 .hgrid{display:grid;grid-template-columns:1.05fr .95fr;gap:42px;align-items:center}
 .hph{border-radius:18px;aspect-ratio:4/3.2;background-size:cover;background-position:center;border:1px solid var(--line);box-shadow:0 40px 80px -36px rgba(16,24,40,.35)}
-@media(max-width:900px){.hgrid{grid-template-columns:1fr}.hph{aspect-ratio:4/2.6}}
+@media(max-width:940px){.hgrid{grid-template-columns:1fr}.hph{aspect-ratio:4/2.6}}
 </style></head><body><nav><div class="wrap">
   <a class="logo" href="index.html">ASAP<span>LENDING</span></a>
   <button class="burger" aria-label="Menú" onclick="document.body.classList.toggle('navopen')">☰</button><div class="links"><a href="fix-and-flip.html">Fix &amp; Flip</a><a href="dscr.html">DSCR</a><a href="construction.html">Construcción</a><a href="index.html#deal">Contacto</a><a class="langpill" href="../fix-and-flip.html"><b>ES</b><span>EN</span></a><a href="tel:+19135132656" style="color:var(--gold2)">913.513.2656</a><a href="index.html#deal" class="cta">Envíe Su Proyecto</a></div>
@@ -125,7 +125,37 @@ section{padding:46px 0}}
 <button class="btn" style="width:100%;justify-content:center">Reciba Sus Términos — Gratis →</button>
 <div class="ok">✓ Recibido — un tomador de decisiones le llama en breve.</div>
 <div class="fine">Al enviar, acepta que podemos llamar o enviar mensajes al número proporcionado.</div></form></div>
-</div></section><footer><div class="wrap">
+</div></section>
+<section id="dealcalc" style="background:#F5F2EA"><div class="wrap" style="max-width:860px">
+<div class="kick" style="color:var(--gold2)">Calculadora de Proyecto</div>
+<h2>Corra los n&uacute;meros de su flip</h2>
+<p style="max-width:620px;margin-top:8px;color:#5A5346">Compra, renovaci&oacute;n, ARV — vea su margen bruto proyectado como nosotros lo vemos. Luego env&iacute;e el proyecto y calculamos el financiamiento exacto.</p>
+<div style="background:#fff;border:1px solid #E5DFD2;border-radius:14px;padding:26px;margin-top:20px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px">
+<label style="font-size:12px;color:#5A5346">Precio de compra<input id="dc-buy" type="number" value="120000" style="width:100%;padding:11px;margin-top:5px;border:1px solid #E5DFD2"></label>
+<label style="font-size:12px;color:#5A5346">Presupuesto de renovaci&oacute;n<input id="dc-rehab" type="number" value="35000" style="width:100%;padding:11px;margin-top:5px;border:1px solid #E5DFD2"></label>
+<label style="font-size:12px;color:#5A5346">ARV (valor despu&eacute;s de reparar)<input id="dc-arv" type="number" value="220000" style="width:100%;padding:11px;margin-top:5px;border:1px solid #E5DFD2"></label>
+</div>
+<div style="display:flex;gap:36px;flex-wrap:wrap;margin-top:22px;align-items:baseline">
+<div><div style="font-family:'Cormorant Garamond',serif;font-size:40px;color:var(--gold2)" id="dc-margin">$—</div><div style="font-size:12.5px;color:#5A5346">margen bruto proyectado</div></div>
+<div><div style="font-family:'Cormorant Garamond',serif;font-size:28px" id="dc-pct">—%</div><div style="font-size:12.5px;color:#5A5346">del ARV</div></div>
+<div><div style="font-family:'Cormorant Garamond',serif;font-size:28px" id="dc-rule">—</div><div style="font-size:12.5px;color:#5A5346">total vs 75% del ARV</div></div>
+</div>
+<div style="font-size:11.5px;color:#8A8070;margin-top:12px">Margen bruto = ARV &minus; compra &minus; renovaci&oacute;n, antes de financiamiento, cierre y costos de mantener. El filtro cl&aacute;sico: total (compra + renovaci&oacute;n) en o bajo ~75% del ARV normalmente significa un proyecto que vale la pena enviar.</div>
+<a class="btn gold" href="index.html#deal" style="display:inline-block;margin-top:16px">Enviar Este Proyecto &rarr;</a>
+</div>
+</div></section>
+<script>
+(function(){const $=i=>document.getElementById(i);
+function dc(){const b=+($('dc-buy').value)||0,r=+($('dc-rehab').value)||0,a=+($('dc-arv').value)||0;
+const m=a-b-r;$('dc-margin').textContent=(m<0?'-$':'$')+Math.abs(m).toLocaleString();
+$('dc-pct').textContent=a>0?Math.round(100*m/a)+'%':'—%';
+const allin=b+r, cap=a*0.75;
+$('dc-rule').textContent=a>0?((allin<=cap?'✓ bajo':'△ sobre')+' ('+Math.round(100*allin/a)+'%)'):'—';}
+['dc-buy','dc-rehab','dc-arv'].forEach(i=>{const e=$(i);if(e)e.addEventListener('input',dc)});
+if($('dc-buy'))dc();})();
+</script>
+<footer><div class="wrap">
   <span>© <span id="yr"></span> ASAP Lending · A Real Living Company · 7017 Oak Street, Kansas City, MO</span>
   <a href="tel:+19135132656">(913) 513-2656</a><a href="index.html">Home</a><a href="privacy.html">Privacy</a>
   <span style="margin-left:auto">Business-purpose loans only. All terms subject to underwriting.</span>
