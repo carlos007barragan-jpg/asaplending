@@ -122,6 +122,26 @@ footer .wrap{display:flex;gap:20px;flex-wrap:wrap;align-items:center}
 footer a{color:var(--mut);text-decoration:none}
 .sticky-call{display:none;position:fixed;bottom:16px;left:16px;right:16px;z-index:60}
 .sticky-call a{display:block;background:var(--ink);color:#fff;text-align:center;font-weight:800;padding:16px;border-radius:12px;text-decoration:none;font-size:14px;box-shadow:0 12px 32px -8px rgba(16,24,40,.4)}
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.g{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/3;cursor:pointer}
+.g img{width:100%;height:100%;object-fit:cover;transition:transform 6s ease;display:block}
+.g:hover img{transform:scale(1.12)}
+.g:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(16,24,40,.8))}
+.g .cap{position:absolute;bottom:14px;left:16px;z-index:2;color:#fff;font-weight:700;font-size:14px;font-family:'Space Grotesk'}
+.g .cap small{display:block;font-family:'Inter';font-weight:600;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#F6D98A}
+.g.wide{grid-column:span 2}
+/* location */
+.loc{display:grid;grid-template-columns:1fr 1.1fr;gap:0;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 34px 70px -34px rgba(16,24,40,.25)}
+.loc .info{background:var(--navy);color:#fff;padding:44px 40px;display:flex;flex-direction:column;justify-content:center}
+.loc .info h3{font-size:26px;font-weight:700;margin-bottom:6px}
+.loc .info .sub2{color:#AAB4C6;font-size:14.5px;margin-bottom:26px}
+.loc .row{display:flex;gap:14px;align-items:flex-start;padding:13px 0;border-top:1px solid rgba(255,255,255,.1);font-size:14.5px}
+.loc .row .ic2{width:38px;height:38px;border-radius:10px;background:rgba(201,150,46,.15);color:var(--gold);display:grid;place-items:center;flex:none;font-size:16px}
+.loc .row b{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#AAB4C6;font-weight:700}
+.loc .row a{color:#fff;text-decoration:none;font-weight:600}
+.loc iframe{width:100%;height:100%;min-height:420px;border:0;display:block;filter:saturate(.9)}
+@media(max-width:940px){.gal{grid-template-columns:1fr 1fr}.g.wide{grid-column:span 2}.loc{grid-template-columns:1fr}.loc iframe{min-height:300px}}
 .rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .rv.in{opacity:1;transform:none}
 @media(max-width:940px){
@@ -142,7 +162,7 @@ footer a{color:var(--mut);text-decoration:none}
 <nav><div class="wrap">
   <a class="logo" href="/">ASAP<span>LENDING</span></a>
   <div class="links">
-    <a href="#models">Financing</a><a href="#states">Where We Lend</a><a href="#how">Process</a><a href="#faq">FAQ</a><a href="tel:+19135132656" style="color:var(--gold2)">913.513.2656</a><a href="#deal" class="cta">Submit a Deal</a>
+    <a href="#models">Financing</a><a href="#states">Where We Lend</a><a href="#how">Process</a><a href="#work">Our Work</a><a href="#visit">Visit Us</a><a href="tel:+19135132656" style="color:var(--gold2)">913.513.2656</a><a href="#deal" class="cta">Submit a Deal</a>
   </div>
 </div></nav>
 
@@ -206,6 +226,21 @@ footer a{color:var(--mut);text-decoration:none}
   </div>
 </section>
 
+<section id="work" style="padding-top:0">
+  <div class="wrap">
+    <div class="kick">The Work</div>
+    <h2 class="title">The projects we fund</h2>
+    <p class="sub">From cosmetic flips to ground-up builds — this is the kind of work our capital keeps moving.</p>
+    <div class="gal">
+      <div class="g wide rv"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80&auto=format&fit=crop" alt="Renovated home exterior" loading="lazy"><div class="cap"><small>Fix & Flip</small>Full exterior renovation</div></div>
+      <div class="g rv"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=80&auto=format&fit=crop" alt="Modern renovated home" loading="lazy"><div class="cap"><small>Value-Add</small>Cosmetic-plus flip</div></div>
+      <div class="g rv"><img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=800&q=80&auto=format&fit=crop" alt="Renovated kitchen interior" loading="lazy"><div class="cap"><small>Interior</small>Full-gut kitchen & living</div></div>
+      <div class="g rv"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80&auto=format&fit=crop" alt="Construction framing" loading="lazy"><div class="cap"><small>Construction</small>Draw-funded build</div></div>
+      <div class="g rv"><img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&q=80&auto=format&fit=crop" alt="Rental property exterior" loading="lazy"><div class="cap"><small>DSCR Rental</small>Buy-and-hold ready</div></div>
+    </div>
+  </div>
+</section>
+
 <section style="padding-top:0">
   <div class="wrap split">
     <div>
@@ -239,6 +274,25 @@ footer a{color:var(--mut);text-decoration:none}
         <div class="ok">✓ Received — a lending decision-maker will call you shortly.</div>
         <div class="fine">By submitting you agree we may call/text the number provided.</div>
       </form>
+    </div>
+  </div>
+</section>
+
+<section id="visit" style="padding-top:0">
+  <div class="wrap">
+    <div class="kick">Find Us</div>
+    <h2 class="title">Real office. Real people. Real answers.</h2>
+    <p class="sub">We're not a call center — we're operators headquartered in Kansas City. Call, text, or walk in.</p>
+    <div class="loc rv in">
+      <div class="info">
+        <h3>ASAP Lending</h3>
+        <div class="sub2">Headquarters · Kansas City, Missouri</div>
+        <div class="row"><div class="ic2">📍</div><div><b>Office</b><a href="https://maps.google.com/?q=7017+Oak+Street+Kansas+City+MO" target="_blank" rel="noopener">7017 Oak Street, Kansas City, MO</a></div></div>
+        <div class="row"><div class="ic2">📞</div><div><b>Call or Text</b><a href="tel:+19135132656">(913) 513-2656</a></div></div>
+        <div class="row"><div class="ic2">⚡</div><div><b>Fastest Path</b><a href="#deal">Submit your deal online — same-day answers</a></div></div>
+        <div class="row"><div class="ic2">🗺️</div><div><b>Lending In</b><span style="color:#fff;font-weight:600">MO · KS · FL · TX · AR · NE</span></div></div>
+      </div>
+      <iframe src="https://www.google.com/maps?q=7017+Oak+Street,+Kansas+City,+MO&output=embed" title="ASAP Lending — 7017 Oak Street, Kansas City, MO" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
 </section>
