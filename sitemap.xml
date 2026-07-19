@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://carlos007barragan-jpg.github.io/asaplending/</loc><priority>1.0</priority></url>
-  <url><loc>https://carlos007barragan-jpg.github.io/asaplending/fix-and-flip.html</loc><priority>0.9</priority></url>
-  <url><loc>https://carlos007barragan-jpg.github.io/asaplending/dscr.html</loc><priority>0.9</priority></url>
-  <url><loc>https://carlos007barragan-jpg.github.io/asaplending/construction.html</loc><priority>0.9</priority></url>
-  <url><loc>https://carlos007barragan-jpg.github.io/asaplending/es/</loc><priority>0.9</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<url><loc>https://carlos007barragan-jpg.github.io/asaplending/index.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://carlos007barragan-jpg.github.io/asaplending/index.html"/><xhtml:link rel="alternate" hreflang="es" href="https://carlos007barragan-jpg.github.io/asaplending/es/index.html"/></url>
+<url><loc>https://carlos007barragan-jpg.github.io/asaplending/es/index.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://carlos007barragan-jpg.github.io/asaplending/index.html"/><xhtml:link rel="alternate" hreflang="es" href="https://carlos007barragan-jpg.github.io/asaplending/es/index.html"/></url>
+<url><loc>https://carlos007barragan-jpg.github.io/asaplending/fix-and-flip.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://carlos007barragan-jpg.github.io/asaplending/fix-and-flip.html"/><xhtml:link rel="alternate" hreflang="es" href="https://carlos007barragan-jpg.github.io/asaplending/es/fix-and-flip.html"/></url>
+<url><loc>https://carlos007barragan-jpg.github.io/asaplending/es/fix-and-flip.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://carlos007barragan-jpg.github.io/asaplending/fix-and-flip.html"/><xhtml:link rel="alternate" hreflang="es" href="https://carlos007barragan-jpg.github.io/asaplending/es/fix-and-flip.html"/></url>
+<url><loc>https://carlos007barragan-jpg.github.io/asaplending/dscr.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://carlos007barragan-jpg.github.io/asaplending/dscr.html"/><xhtml:link rel="alternate" hreflang="es" href="https://carlos007barragan-jpg.github.io/asaplending/es/dscr.html"/></url>
+<url><loc>https://carlos007barragan-jpg.github.io/asaplending/es/dscr.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://carlos007barragan-jpg.github.io/asaplending/dscr.html"/><xhtml:link rel="alternate" hreflang="es" href="https://carlos007barragan-jpg.github.io/asaplending/es/dscr.html"/></url>
+<url><loc>https://carlos007barragan-jpg.github.io/asaplending/construction.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://carlos007barragan-jpg.github.io/asaplending/construction.html"/><xhtml:link rel="alternate" hreflang="es" href="https://carlos007barragan-jpg.github.io/asaplending/es/construction.html"/></url>
+<url><loc>https://carlos007barragan-jpg.github.io/asaplending/es/construction.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://carlos007barragan-jpg.github.io/asaplending/construction.html"/><xhtml:link rel="alternate" hreflang="es" href="https://carlos007barragan-jpg.github.io/asaplending/es/construction.html"/></url>
 </urlset>
