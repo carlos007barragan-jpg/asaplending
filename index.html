@@ -26,7 +26,9 @@ section,div[id],header[id]{scroll-margin-top:82px}
 body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:15.5px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 h1,h2,h3,.disp{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
-.btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;font-weight:800;padding:16px 30px;text-decoration:none;font-size:14px;border:none;cursor:pointer;font-family:'Inter';border-radius:10px;transition:transform .15s,box-shadow .15s,background .2s}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;font-weight:800;padding:16px 30px;text-decoration:none;font-size:14px;border:none;cursor:pointer;font-family:'Inter';border-radius:10px;transition:transform .15s,box-shadow .15s,background .2s;position:relative;overflow:hidden}
+.btn:after{content:'';position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);transition:left .55s ease}
+.btn:hover:after{left:130%}
 .btn:hover{transform:translateY(-2px);background:var(--gold);color:var(--ink);box-shadow:0 14px 34px -10px rgba(201,150,46,.5)}
 .btn.gold{background:var(--gold);color:var(--ink)}
 .btn.gold:hover{background:var(--ink);color:#fff}
@@ -42,15 +44,24 @@ nav .links a.cta{background:var(--ink);color:#fff;padding:11px 20px;border-radiu
 /* hero */
 .hero{position:relative;padding:88px 0 0;background:linear-gradient(180deg,#FFFFFF 0%,#F6F7F9 100%)}
 .hero .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding-bottom:88px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.hero .tagchip{animation:fadeUp .6s ease .05s both}
+.hero h1{animation:fadeUp .7s ease .15s both}
+.hero p{animation:fadeUp .7s ease .3s both}
+.hero .btn{animation:fadeUp .7s ease .45s both}
+.hero .ph{animation:fadeUp .8s ease .3s both}
 .tagchip{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(201,150,46,.5);background:rgba(201,150,46,.08);border-radius:999px;padding:8px 18px;font-size:12px;font-weight:700;color:var(--gold2);letter-spacing:.1em;text-transform:uppercase;margin-bottom:24px}
 .tagchip:before{content:'';width:7px;height:7px;border-radius:50%;background:var(--gold)}
 .hero h1{font-size:66px;font-weight:700;line-height:1.0}
 .hero h1 .ol{color:transparent;-webkit-text-stroke:1.6px var(--ink)}
 .hero h1 em{font-style:normal;background:linear-gradient(100deg,var(--gold2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero p{color:var(--mut);font-size:17.5px;max-width:500px;margin:24px 0 32px}
-.hero .ph{border-radius:22px;overflow:hidden;position:relative;aspect-ratio:4/4.2;box-shadow:0 50px 100px -40px rgba(16,24,40,.45);background:url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1600&q=80&auto=format&fit=crop') center/cover}
+.hero .ph{border-radius:22px;overflow:hidden;position:relative;aspect-ratio:4/4.2;box-shadow:0 50px 100px -40px rgba(16,24,40,.45);background:#0E1013}
+.hero .ph:before{content:'';position:absolute;inset:-7%;background:url('https://images.unsplash.com/photo-1444419988131-046ed4e5ffd6?w=1600&q=80&auto=format&fit=crop') center/cover;animation:kenburns 16s ease-in-out infinite alternate}
+@keyframes kenburns{from{transform:scale(1) translateY(0)}to{transform:scale(1.1) translateY(-2%)}}
 .hero .ph:after{content:'';position:absolute;inset:0;background:linear-gradient(200deg,transparent 55%,rgba(16,24,40,.55))}
-.hero .ph .chip{position:absolute;bottom:20px;left:20px;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-radius:12px;padding:12px 18px;font-size:13px;font-weight:700;color:var(--ink)}
+.hero .ph .chip{position:absolute;bottom:20px;left:20px;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-radius:12px;padding:12px 18px;font-size:13px;font-weight:700;color:var(--ink);z-index:2;animation:floaty 5.5s ease-in-out infinite}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
 .hero .ph .chip small{display:block;font-weight:600;color:var(--mut);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
 /* ticker */
 .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff;overflow:hidden;padding:15px 0}
@@ -201,12 +212,12 @@ body.navopen nav .links a.cta{margin-top:10px;text-align:center;border-bottom:no
   <div class="wrap grid">
     <div>
       <div class="tagchip">Private Capital · 6 States</div>
-      <h1><span class="ol">CAPITAL FOR</span><br>SERIOUS <em>REAL ESTATE INVESTORS.</em></h1>
-      <p>Asset-based lending from operators who invest ourselves. Submit your deal — get your terms and a free ARV analysis, no commitment needed.</p>
+      <h1><span class="ol">WE FUND THE</span><br>HOUSES <em>NOBODY ELSE WILL.</em></h1>
+      <p>Distressed, dated, gutted — that's where the margin lives, and that's exactly what we finance. Asset-based capital from operators who flip these houses ourselves. Free ARV analysis, no commitment.</p>
       <a class="btn gold" href="#deal">Submit Your Deal →</a>
       <a class="btn line" href="#models" style="margin-left:12px">See Financing Models</a>
     </div>
-    <div class="ph rv in"><div class="chip"><small>Home Base</small>Kansas City · Lending in 6 States</div></div>
+    <div class="ph rv in"><div class="chip"><small>The Before — Where We Come In</small>Kansas City HQ · Lending in 6 States</div></div>
   </div>
   <div class="ticker"><div class="track">
     <span><b>ASSET-BASED</b> LENDING</span><span><b>FIX & FLIP</b></span><span><b>DSCR</b> RENTAL</span><span><b>CONSTRUCTION</b> DRAWS</span><span><b>MISSOURI</b></span><span><b>KANSAS</b></span><span><b>FLORIDA</b></span><span><b>TEXAS</b></span><span><b>ARKANSAS</b></span><span><b>NEBRASKA</b></span>
@@ -380,7 +391,10 @@ function sendLead(f,src){
     .catch(()=>{btn.disabled=false;btn.textContent='Try Again';});
   return false;
 }
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){
+  const sibs=[...e.target.parentElement.children].filter(x=>x.classList.contains('rv'));
+  e.target.style.transitionDelay=(sibs.indexOf(e.target)%4)*90+'ms';
+  e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 </script>
 <script>
