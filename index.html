@@ -143,6 +143,18 @@ footer a{color:var(--mut);text-decoration:none}
 .loc .row a{color:#fff;text-decoration:none;font-weight:600}
 .loc iframe{width:100%;height:100%;min-height:420px;border:0;display:block;filter:saturate(.9)}
 @media(max-width:940px){.gal{grid-template-columns:1fr 1fr}.g.wide{grid-column:span 2}.loc{grid-template-columns:1fr}.loc iframe{min-height:300px}}
+.funnel{background:linear-gradient(120deg,#C9962E,#E8C766);color:#101828;padding:70px 24px;text-align:center;position:relative;overflow:hidden}
+.funnel:before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 20%,rgba(255,255,255,.35),transparent 55%)}
+.funnel .in2{position:relative;max-width:760px;margin:0 auto}
+.funnel h2{font-size:44px;font-weight:700;line-height:1.05;margin-bottom:12px}
+.funnel p{font-size:17px;font-weight:600;opacity:.85;margin-bottom:26px}
+.funnel .btn{background:#101828;color:#fff;font-size:15px;padding:18px 40px}
+.funnel .btn:hover{background:#fff;color:#101828}
+.funnel .mini{display:flex;justify-content:center;gap:26px;margin-top:22px;flex-wrap:wrap;font-size:13px;font-weight:700}
+.funnel .mini span:before{content:'✓ ';font-weight:900}
+.badges{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 16px}
+.badges span{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#F6D98A;border:1px solid rgba(232,184,75,.45);background:rgba(232,184,75,.1);border-radius:999px;padding:7px 13px}
+@media(max-width:900px){.funnel h2{font-size:30px}}
 .rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .rv.in{opacity:1;transform:none}
 @media(max-width:940px){
@@ -182,7 +194,7 @@ body.navopen nav .links a.cta{margin-top:10px;text-align:center;border-bottom:no
     <div>
       <div class="tagchip">Private Capital · 6 States</div>
       <h1><span class="ol">CAPITAL FOR</span><br>SERIOUS <em>REAL ESTATE INVESTORS.</em></h1>
-      <p>Asset-based lending from operators who invest ourselves. Multiple financing models, underwritten on the deal — with terms tailored to it.</p>
+      <p>Asset-based lending from operators who invest ourselves. Submit your deal — get your terms and a free ARV analysis, no commitment needed.</p>
       <a class="btn gold" href="#deal">Submit Your Deal →</a>
       <a class="btn line" href="#models" style="margin-left:12px">See Financing Models</a>
     </div>
@@ -252,7 +264,16 @@ body.navopen nav .links a.cta{margin-top:10px;text-align:center;border-bottom:no
   </div>
 </section>
 
-<section style="padding-top:0">
+<div class="funnel">
+  <div class="in2">
+    <h2>Don't know what your deal's worth?<br>Submit it today.</h2>
+    <p>Get your terms and a free ARV analysis — find out exactly how much you can get. No commitment needed.</p>
+    <a class="btn" href="#deal">Submit Your Deal Now →</a>
+    <div class="mini"><span>Free ARV analysis</span><span>No commitment</span><span>Same-day terms</span><span>Talk to a decision-maker</span></div>
+  </div>
+</div>
+
+<section style="padding-top:76px">
   <div class="wrap split">
     <div>
       <div class="kick">Why Us</div>
@@ -267,8 +288,9 @@ body.navopen nav .links a.cta{margin-top:10px;text-align:center;border-bottom:no
       </ul>
     </div>
     <div class="formcard" id="deal">
-      <h3>Run your deal by us</h3>
-      <div class="fs">Deal + numbers = an answer, usually the same day.</div>
+      <div class="badges"><span>Free ARV Analysis</span><span>No Commitment</span><span>Same-Day Terms</span></div>
+      <h3>Submit your deal. Get your terms.</h3>
+      <div class="fs">Find out how much you can get — address + numbers in, real terms out. Usually the same day.</div>
       <form onsubmit="return sendLead(this,'Deal submission')">
         <input name="name" placeholder="Your name *" required>
         <input name="phone" placeholder="Cell phone *" required>
@@ -281,7 +303,7 @@ body.navopen nav .links a.cta{margin-top:10px;text-align:center;border-bottom:no
         </select>
         <textarea name="msg" rows="3" placeholder="Property address · state · purchase price · budget · exit plan"></textarea>
         <input class="hp" name="company" tabindex="-1" autocomplete="off">
-        <button class="btn gold" style="width:100%;justify-content:center">Get My Deal Reviewed →</button>
+        <button class="btn gold" style="width:100%;justify-content:center">Get My Terms — Free →</button>
         <div class="ok">✓ Received — a lending decision-maker will call you shortly.</div>
         <div class="fine">By submitting you agree we may call/text the number provided.</div>
       </form>
