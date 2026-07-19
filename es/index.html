@@ -67,15 +67,23 @@ body.navopen nav .links a{display:block;padding:14px 4px;font-size:15px;border-b
 body.navopen nav .links a.cta{margin-top:10px;text-align:center;border-bottom:none}
 section{padding:46px 0}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.langpill{display:inline-flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;text-decoration:none;font-size:11.5px;font-weight:800;letter-spacing:.04em;line-height:1}
+.langpill b{background:var(--ink);color:#fff;padding:8px 12px;font-weight:800}
+.langpill span{color:var(--ink);padding:8px 12px}
+.langpill:hover span{color:var(--gold2)}
+.hgrid{display:grid;grid-template-columns:1.05fr .95fr;gap:42px;align-items:center}
+.hph{border-radius:18px;aspect-ratio:4/3.2;background-size:cover;background-position:center;border:1px solid var(--line);box-shadow:0 40px 80px -36px rgba(16,24,40,.35)}
+@media(max-width:900px){.hgrid{grid-template-columns:1fr}.hph{aspect-ratio:4/2.6}}
 </style></head><body><nav><div class="wrap">
   <a class="logo" href="index.html">ASAP<span>LENDING</span></a>
   <button class="burger" aria-label="Menú" onclick="document.body.classList.toggle('navopen')">☰</button>
-  <div class="links"><a href="index.html#modelos">Financiamiento</a><a href="index.html#faq">Preguntas</a><a href="../index.html">English</a><a href="tel:+19135132656" style="color:var(--gold2)">913.513.2656</a><a href="index.html#deal" class="cta">Envíe Su Proyecto</a></div>
-</div></nav><header class="hero"><div class="wrap">
+  <div class="links"><a href="index.html#modelos">Financiamiento</a><a href="index.html#faq">Preguntas</a><a class="langpill" href="../index.html"><b>ES</b><span>EN</span></a><a href="tel:+19135132656" style="color:var(--gold2)">913.513.2656</a><a href="index.html#deal" class="cta">Envíe Su Proyecto</a></div>
+</div></nav><header class="hero"><div class="wrap hgrid"><div>
 <div class="kick">Capital Privado · 6 Estados</div>
 <h1>Capital para inversionistas <em>serios de bienes raíces.</em></h1>
 <p>Préstamos basados en el activo, de operadores que también invertimos. Envíe su proyecto — reciba sus términos y un análisis de ARV gratis, sin compromiso.</p>
-<br><a class="btn" href="#deal">Envíe Su Proyecto →</a></div></header>
+<br><a class="btn" href="#deal">Envíe Su Proyecto →</a></div><div class="hph" style="background-image:url('https://images.unsplash.com/photo-1674649207083-281c2517ab49?w=1400&q=80&auto=format&fit=crop')"></div></div></header>
 
 <section id="modelos"><div class="wrap">
 <div class="kick">Financiamiento</div>
@@ -87,6 +95,7 @@ section{padding:46px 0}}
 <div class="card"><span class="n">CONSTRUCCIÓN</span><h3>Construcción y Remodelación Pesada</h3><p>Proyectos desde cero y remodelaciones mayores con desembolsos por etapas que mantienen a sus cuadrillas trabajando.</p></div>
 <div class="card"><span class="n">A LA MEDIDA</span><h3>Estructuras Personalizadas</h3><p>Portafolios, situaciones puente y proyectos fuera de lo común — estructurados caso por caso con documentación clara.</p></div>
 </div>
+<div class="ph" style="background-image:url('https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=1400&q=80&auto=format&fit=crop');border-radius:16px;overflow:hidden;height:300px;background-size:cover;background-position:center;margin:26px 0;border:1px solid var(--line)"></div>
 </div></section>
 
 <section style="padding-top:0;background:var(--soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:56px 0"><div class="wrap" style="text-align:center">
