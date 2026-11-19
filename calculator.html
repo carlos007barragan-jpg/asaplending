@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flip and DSCR Calculators | ASAP Lending</title>
+<meta name="description" content="Free calculators for real estate investors: flip profit, maximum offer and DSCR.">
+<link rel="canonical" href="https://carlos007barragan-jpg.github.io/asaplending/calculator.html">
+<link rel="alternate" hreflang="en" href="https://carlos007barragan-jpg.github.io/asaplending/calculator.html">
+<link rel="alternate" hreflang="es" href="https://carlos007barragan-jpg.github.io/asaplending/es/calculator.html">
+<link rel="alternate" hreflang="x-default" href="https://carlos007barragan-jpg.github.io/asaplending/calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ASAP Lending">
+<meta property="og:title" content="Flip and DSCR Calculators | ASAP Lending">
+<meta property="og:description" content="Free calculators for real estate investors: flip profit, maximum offer and DSCR.">
+<meta property="og:url" content="https://carlos007barragan-jpg.github.io/asaplending/calculator.html">
+<meta property="og:image" content="https://carlos007barragan-jpg.github.io/asaplending/assets/og.png">
+<meta name="theme-color" content="#0B0B0C">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FinancialService", "name": "ASAP Lending", "url": "https://carlos007barragan-jpg.github.io/asaplending/", "telephone": "+19135132656", "logo": "https://carlos007barragan-jpg.github.io/asaplending/assets/icon-512.png", "address": {"@type": "PostalAddress", "streetAddress": "7017 Oak Street", "addressLocality": "Kansas City", "addressRegion": "MO", "addressCountry": "US"}, "areaServed": ["Missouri", "Kansas", "Florida", "Texas", "Arkansas", "Nebraska"], "description": "Business-purpose real estate financing for investors: fix and flip, DSCR rental, construction and transactional funding."}</script>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <span class="tb-states">MO · KS · FL · TX · AR · NE</span>
+  <span class="sp">Call or text <a href="tel:+19135132656">(913) 513-2656</a></span>
+  <span class="langpill" aria-label="Language"><span class="on">EN</span><a href="es/calculator.html" lang="es" hreflang="es">ES</a></span>
+</div></div>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="index.html" aria-label="ASAP Lending"><img src="assets/logo-on-white.svg" alt="ASAP Lending" width="114" height="46"></a>
+  <button class="burger" aria-label="Menu" aria-expanded="false"><span></span></button>
+  <nav class="links" aria-label="Main"><a href="fix-and-flip.html">Fix &amp; Flip</a><a href="dscr.html">DSCR Rentals</a><a href="construction.html">Construction</a><a href="hard-money-loans.html">Hard Money</a><a href="calculator.html" class="on" aria-current="page">Calculator</a><a href="about.html">About</a><a href="contact.html">Contact</a><a class="cta" href="apply.html">Apply Now</a></nav>
+</div></header>
+<div class="stripe" aria-hidden="true"></div>
+
+<main>
+<section class="hero sub-hero"><div class="wrap">
+  <div class="crumbs"><a href="index.html">Home</a><span>/</span><span>Calculators</span></div>
+  <h1>Deal calculators for flips and rentals</h1>
+  <p class="lead">Three quick tools. Put in your own numbers, including the rate and points from any term sheet you are comparing.</p>
+  
+</div></section>
+<section id="flip"><div class="wrap">
+  <div class="shead"><span class="eyebrow">A · Flip deal analyzer</span><h2>Is there enough profit in this flip?</h2></div>
+  <div class="calc">
+    <div class="in">
+      <h3>Your deal</h3>
+      <div class="note">The rate, points and down payment below are placeholders, not our pricing. Replace them with the numbers on your term sheet.</div>
+      <div class="row">
+        <label for="fc-buy">Purchase price ($)<input id="fc-buy" inputmode="numeric" value="118000"></label>
+        <label for="fc-rehab">Rehab budget ($)<input id="fc-rehab" inputmode="numeric" value="46500"></label>
+      </div>
+      <div class="row">
+        <label for="fc-arv">After-repair value ($)<input id="fc-arv" inputmode="numeric" value="242000"></label>
+        <label for="fc-mo">Months held<input id="fc-mo" inputmode="numeric" value="6"></label>
+      </div>
+      <div class="row">
+        <label for="fc-rate">Annual rate (%)<input id="fc-rate" inputmode="decimal" value="12"></label>
+        <label for="fc-pts">Points and fees (% of loan)<input id="fc-pts" inputmode="decimal" value="3"></label>
+      </div>
+      <div class="row">
+        <label for="fc-down">Your cash in (% of total cost)<input id="fc-down" inputmode="decimal" value="15"></label>
+        <label for="fc-sell">Selling costs (% of ARV)<input id="fc-sell" inputmode="decimal" value="7"></label>
+      </div>
+    </div>
+    <div class="out">
+      <h3>The result</h3>
+      <div class="outgrid">
+        <div class="o big" id="fc-netbox"><small>Projected profit</small><b id="fc-net">$0</b></div>
+        <div class="o"><small>Loan amount</small><b id="fc-loan">$0</b></div>
+        <div class="o"><small>Your cash in</small><b id="fc-cash">$0</b></div>
+        <div class="o"><small>Points and fees</small><b id="fc-fee">$0</b></div>
+        <div class="o"><small>Interest carry</small><b id="fc-carry">$0</b></div>
+        <div class="o"><small>Selling costs</small><b id="fc-sc">$0</b></div>
+        <div class="o"><small>Return on cash</small><b id="fc-roi">0%</b></div>
+      </div>
+      <p style="margin-top:18px"><a class="btn wide arrow" href="apply.html">Get real terms for this deal</a></p>
+    </div>
+  </div>
+</div></section>
+
+<section class="paper" id="offer"><div class="wrap">
+  <div class="shead"><span class="eyebrow">B · Maximum offer</span><h2>What is the most you should pay?</h2>
+  <p class="lead">A common investor rule of thumb: a share of ARV, minus repairs. Many flippers start at 70 percent and adjust for the market.</p></div>
+  <div class="calc">
+    <div class="in">
+      <div class="row">
+        <label for="mo-arv">After-repair value ($)<input id="mo-arv" inputmode="numeric" value="242000"></label>
+        <label for="mo-rep">Repairs ($)<input id="mo-rep" inputmode="numeric" value="46500"></label>
+      </div>
+      <div class="row">
+        <label for="mo-pct">Rule (% of ARV)<input id="mo-pct" inputmode="decimal" value="70"></label>
+        <label for="mo-fee">Wholesale fee, if any ($)<input id="mo-fee" inputmode="numeric" value="0"></label>
+      </div>
+    </div>
+    <div class="out"><div class="outgrid"><div class="o big"><small>Maximum offer</small><b id="mo-out">$0</b></div></div>
+      <p class="mono muted" id="mo-line" style="margin-top:14px;font-size:14px"></p>
+      <p class="fine">A rule of thumb for screening deals. It is not a loan limit.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="shead"><span class="eyebrow">C · DSCR</span><h2>Does the rent cover the payment?</h2></div>
+  
+<div class="calc" id="dscr">
+  <div class="in">
+    <h3>DSCR check</h3>
+    <div class="note">The rates in the table are examples for the math, not a quote.</div>
+    <label for="dr-loan">Loan amount ($)<input id="dr-loan" inputmode="numeric" value="160000"></label>
+    <label for="dr-rent">Monthly rent ($)<input id="dr-rent" inputmode="numeric" value="1750"></label>
+    <label for="dr-ti">Taxes + insurance per month ($)<input id="dr-ti" inputmode="numeric" value="290"></label>
+    <p class="fine">30-year amortization. DSCR = rent ÷ (principal, interest, taxes, insurance).</p>
+  </div>
+  <div class="out">
+    <div class="tablewrap"><table style="min-width:420px"><thead><tr><th>Rate</th><th>P&amp;I</th><th>PITI</th><th>DSCR</th><th></th></tr></thead><tbody id="dr-body"></tbody></table></div>
+  </div>
+</div>
+</div></section>
+
+<div class="stripe" aria-hidden="true"></div>
+<section class="band" style="padding:64px 0"><div class="wrap">
+  <div><h2>Numbers work? Put the deal in front of us.</h2><p>Complete submissions get an answer the same business day, with a free review of your ARV.</p></div>
+  <div class="acts"><a class="btn yellow arrow" href="apply.html">Start my application</a><a class="btn ghost" href="tel:+19135132656">Call (913) 513-2656</a></div>
+</div></section></main>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <div><a class="logo" href="index.html" aria-label="ASAP Lending"><img src="assets/logo-on-black.svg" alt="ASAP Lending" width="133" height="54"></a>
+      <p style="margin-top:16px;max-width:34ch">Private financing for real estate investors. Underwritten on the deal, from an office you can walk into.</p>
+    </div>
+    <div><h4>Programs</h4><ul>
+      <li><a href="fix-and-flip.html">Fix &amp; flip loans</a></li>
+      <li><a href="dscr.html">DSCR rental loans</a></li>
+      <li><a href="construction.html">Construction loans</a></li>
+      <li><a href="hard-money-loans.html#transactional">Transactional funding</a></li>
+    </ul></div>
+    <div><h4>Company</h4><ul>
+      <li><a href="hard-money-loans.html">Hard money explained</a></li>
+      <li><a href="calculator.html">Deal calculators</a></li>
+      <li><a href="about.html">About us</a></li>
+      <li><a href="about.html#partners">Referral partners</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul></div>
+    <div><h4>Contact</h4><ul>
+      <li><a href="tel:+19135132656">(913) 513-2656</a></li>
+      <li>7017 Oak Street<br>Kansas City, MO</li>
+      <li><a href="apply.html">Start an application</a></li>
+    </ul></div>
+  </div>
+  <div class="legal">
+    <p>ASAP Lending provides and arranges business-purpose financing secured by non-owner-occupied investment real estate in Missouri, Kansas, Florida, Texas, Arkansas and Nebraska. We do not make consumer loans or loans on a home you live in. Loans may be funded by ASAP Lending or its capital partners.</p>
+    <p>Nothing on this site is a commitment to lend or a quote. All financing is subject to underwriting, valuation and title review. Calculator results are estimates from the numbers you enter.</p>
+    <p>© <span id="yr">2026</span> ASAP Lending · 7017 Oak Street, Kansas City, MO</p>
+  </div>
+</div></footer>
+<div class="mbar"><a href="tel:+19135132656" aria-label="(913) 513-2656">Call</a><a class="go" href="apply.html">Apply Now</a></div>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
