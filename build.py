@@ -7,9 +7,9 @@ Usage: python3 build.py <output_dir>
 import json, os, re, sys
 
 OUT = sys.argv[1]
-BASE = "https://carlos007barragan-jpg.github.io/asaplending/"   # switch to https://asaplending.com/ once the domain is owned and pointed
-EMAIL = "funding@asaplending.com"
-SHOW_EMAIL = False   # asaplending.com is not confirmed as owned yet; a public address there could lose leads
+BASE = "https://asaplendinggroup.com/"
+EMAIL = "funding@asaplendinggroup.com"
+SHOW_EMAIL = False   # funding@ sends but has no inbox yet; show it once the alias exists
 PHONE_D, PHONE_T = "(913) 513-2656", "+19135132656"
 STREET, CITY = "7017 Oak Street", "Kansas City, MO"
 LANG = "en"
