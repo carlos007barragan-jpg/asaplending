@@ -188,13 +188,13 @@ def p_index():
     form = lead_form("Homepage quick request", "q", "[[Get my terms||Obtener mis términos]]", "[[Same-day answer||Respuesta el mismo día]]", "[[Send my deal||Enviar mi proyecto]]")
     fq = faq([
         ("[[What kinds of financing do you offer?||¿Qué tipos de financiamiento ofrecen?]]",
-         "[[Fix and flip loans that cover purchase and rehab, DSCR loans for rentals, construction and heavy-rehab loans funded in draws, and transactional funding for double closings. If your deal does not fit one of those, send it anyway and we will tell you what we can structure.||Préstamos fix &amp; flip que cubren compra y remodelación, préstamos DSCR para rentas, préstamos de construcción y remodelación mayor con desembolsos por etapa, y fondeo transaccional para cierres dobles. Si su proyecto no encaja en uno de esos, envíelo de todos modos y le diremos qué podemos estructurar.]]"),
+         "[[Fix and flip loans that cover purchase and rehab, DSCR loans for rentals, construction and heavy-rehab loans funded in stages (new builds depend on borrower and state), and transactional funding for double closings. If your deal does not fit one of those, send it anyway and we will tell you what we can structure.||Préstamos fix &amp; flip que cubren compra y remodelación, préstamos DSCR para rentas, préstamos de construcción y remodelación mayor por etapas (la obra nueva depende del prestatario y del estado), y fondeo transaccional para cierres dobles. Si su proyecto no encaja en uno de esos, envíelo de todos modos y le diremos qué podemos estructurar.]]"),
         ("[[Why don't you post rates?||¿Por qué no publican tasas?]]",
          "[[Because a posted rate is rarely the rate you get. Each loan is priced on its own numbers: the property, the scope of work, your experience and your exit. Send the deal and you get written terms for that deal.||Porque la tasa publicada casi nunca es la que usted recibe. Cada préstamo se cotiza con sus propios números: la propiedad, el alcance de obra, su experiencia y su salida. Envíe el proyecto y recibirá términos por escrito para ese proyecto.]]"),
         ("[[Do you check credit or income?||¿Revisan crédito o ingresos?]]",
-         "[[The deal carries the weight. We underwrite the property and the plan first, so self-employed and full-time investors are welcome. We do not ask for W-2s or tax returns on our asset-based loans.||El proyecto es lo que más pesa. Primero evaluamos la propiedad y el plan, así que los inversionistas independientes y de tiempo completo son bienvenidos. En nuestros préstamos basados en el activo no pedimos W-2 ni declaraciones de impuestos.]]"),
+         "[[The deal carries the weight. Our asset-based loans have no credit requirement, and we do not ask for W-2s or tax returns on them. Some other loan types do need a credit check. Applying never pulls your credit: we walk you through the programs first, and credit is only pulled if the program needs it or you choose one that does, before your term sheet is written.||El proyecto es lo que más pesa. Nuestros préstamos basados en el activo no tienen requisito de crédito, y en ellos no pedimos W-2 ni declaraciones de impuestos. Otros tipos de préstamo sí requieren revisar el crédito. Aplicar nunca consulta su crédito: primero le explicamos los programas, y el crédito solo se consulta si el programa lo requiere o si usted elige uno que lo requiera, antes de preparar su hoja de términos.]]"),
         ("[[I have never done a flip. Will you look at my deal?||Nunca he hecho un flip. ¿Revisan mi proyecto?]]",
-         "[[Yes. First-time investors get funded when the deal is sound: a realistic ARV, a line-item scope of work, a contractor lined up and cash for your share of the project.||Sí. Financiamos a inversionistas nuevos cuando el proyecto es sólido: un ARV realista, un alcance de obra detallado, un contratista listo y efectivo para su parte del proyecto.]]"),
+         "[[Yes. We fund first-time investors when the deal's underwriting is sound.||Sí. Financiamos a inversionistas nuevos cuando la evaluación del proyecto es sólida.]]"),
         ("[[How fast can you close?||¿Qué tan rápido pueden cerrar?]]",
          "[[Days on a clean deal, not weeks. Timing depends on title work and valuation, and we tell you the realistic date up front.||Días en un proyecto limpio, no semanas. El tiempo depende del trabajo de título y del avalúo, y le decimos la fecha realista desde el principio.]]"),
         ("[[Where do you lend?||¿Dónde prestan?]]",
@@ -243,7 +243,7 @@ def p_index():
       <div class="more"><a class="tlink" href="dscr.html">[[How DSCR works||Cómo funciona DSCR]] →</a></div></article>
     <article class="card"><div class="ico">%(i_build)s</div><h3>[[Construction||Construcción]]</h3>
       <p>[[Ground-up builds and heavy rehab.||Obra nueva y remodelación mayor.]]</p>
-      <ul><li>[[Budget phased at closing||Presupuesto por etapas desde el cierre]]</li><li>[[Inspection, then release||Inspección y luego desembolso]]</li><li>[[Crews never wait on money||La cuadrilla no espera el dinero]]</li></ul>
+      <ul><li>[[Funded in stages as work is verified||Fondeado por etapas al verificar avances]]</li><li>[[Reviewed deal by deal||Revisado caso por caso]]</li><li>[[Ground-up depends on borrower and state||Obra nueva depende del prestatario y del estado]]</li></ul>
       <div class="more"><a class="tlink" href="construction.html">[[How draws work||Cómo funcionan los desembolsos]] →</a></div></article>
     <article class="card"><div class="ico">%(i_swap)s</div><h3>[[Transactional||Transaccional]]</h3>
       <p>[[Short capital for a double close.||Capital corto para un cierre doble.]]</p>
@@ -319,10 +319,9 @@ def p_index():
 <section data-gallery hidden><div class="wrap">
   <div class="shead"><span class="eyebrow">[[The work||El trabajo]]</span><h2>[[The kind of projects we fund||El tipo de proyectos que financiamos]]</h2></div>
   <div class="gallery">
-    <figure><img src="@@A@@photos/flip-after.jpg" alt="[[Renovated house exterior||Exterior de casa remodelada]]" loading="lazy"><figcaption>[[Fix &amp; flip||Fix &amp; flip]]</figcaption></figure>
-    <figure><img src="@@A@@photos/kitchen.jpg" alt="[[Finished kitchen||Cocina terminada]]" loading="lazy"><figcaption>[[The finish||El acabado]]</figcaption></figure>
-    <figure><img src="@@A@@photos/rehab-progress.jpg" alt="[[Renovation in progress||Remodelación en proceso]]" loading="lazy"><figcaption>[[Draw-funded||Por desembolsos]]</figcaption></figure>
-    <figure><img src="@@A@@photos/rental.jpg" alt="[[Rent-ready home||Casa lista para rentar]]" loading="lazy"><figcaption>[[DSCR rental||Renta DSCR]]</figcaption></figure>
+    <figure class="wide"><img src="@@A@@photos/exterior.jpg" alt="[[Renovated ranch house with new siding, cedar accents and black windows||Casa remodelada con revestimiento nuevo, detalles de cedro y ventanas negras]]" loading="lazy"><figcaption>[[Finished exterior||Exterior terminado]]</figcaption></figure>
+    <figure><img src="@@A@@photos/rehab.jpg" alt="[[Interior taken down to the studs with new floor framing||Interior hasta la estructura con piso nuevo en proceso]]" loading="lazy"><figcaption>[[Mid-rehab||En plena obra]]</figcaption></figure>
+    <figure><img src="@@A@@photos/kitchen.jpg" alt="[[Finished white kitchen with a gas range||Cocina blanca terminada con estufa de gas]]" loading="lazy"><figcaption>[[Finished kitchen||Cocina terminada]]</figcaption></figure>
   </div>
 </div></section>
 
@@ -367,7 +366,7 @@ def p_flip():
   <div class="shead"><span class="eyebrow">[[Three borrower paths||Tres perfiles de prestatario]]</span><h2>[[Where you fit||Dónde encaja usted]]</h2>
   <p class="lead">[[Every path uses the same structure. What changes is how much weight the property carries.||Todos los perfiles usan la misma estructura. Lo que cambia es cuánto pesa la propiedad.]]</p></div>
   <div class="grid g3">
-    <article class="card"><span class="num">[[PATH A||PERFIL A]]</span><h3>[[Strong credit, clear exit||Buen crédito, salida clara]]</h3><p>[[Experienced investors with established credit. Our most competitive pricing.||Inversionistas con experiencia y crédito establecido. Nuestros mejores precios.]]</p></article>
+    <article class="card"><span class="num">[[PATH A||PERFIL A]]</span><h3>[[Strong credit, clear exit||Buen crédito, salida clara]]</h3><p>[[Experienced investors with established credit. Our most competitive pricing. This path uses a credit check, which we tell you about before it happens.||Inversionistas con experiencia y crédito establecido. Nuestros mejores precios. Este perfil usa una consulta de crédito, y le avisamos antes de hacerla.]]</p></article>
     <article class="card"><span class="num">[[PATH B||PERFIL B]]</span><h3>[[Flexible credit||Crédito flexible]]</h3><p>[[You know how to run a flip but your credit is thin or bruised. Same structure, more room on credit.||Usted sabe manejar un flip pero su crédito es corto o tiene golpes. Misma estructura, más flexibilidad.]]</p></article>
     <article class="card feature"><span class="num" style="color:#fff">[[PATH C||PERFIL C]]</span><h3>[[Asset-based||Basado en el activo]]</h3><p>[[The deal carries the loan. No credit requirement; we look at the property, the numbers and your cash in the project.||El proyecto sostiene el préstamo. Sin requisito de crédito; vemos la propiedad, los números y su efectivo en el proyecto.]]</p></article>
   </div>
@@ -456,24 +455,24 @@ def p_dscr():
 def p_construction():
     form = lead_form("Construction page", "cn", "[[Fund a build||Financie una obra]]", "[[Draw-funded||Por etapas]]", "[[Get my terms||Obtener mis términos]]", "Investor lending — Construction")
     fq = faq([
-        ("[[How is the budget released?||¿Cómo se libera el presupuesto?]]", "[[In draws. The budget is split into phases at closing. When a phase is done, an inspection verifies it and that phase is paid.||Por desembolsos. El presupuesto se divide en etapas al cierre. Cuando se termina una etapa, una inspección la verifica y se paga.]]"),
-        ("[[How quickly are draws paid?||¿Qué tan rápido pagan los desembolsos?]]", "[[Request the draw when the phase is complete. We schedule the inspection right away and release once it is verified, so the next phase can start.||Solicite el desembolso al terminar la etapa. Programamos la inspección de inmediato y liberamos al verificar, para que arranque la siguiente etapa.]]"),
-        ("[[Do you finance the lot?||¿Financian el terreno?]]", "[[Send the lot details with the build. We structure land and construction together when the project supports it.||Envíe los datos del terreno junto con la obra. Estructuramos terreno y construcción juntos cuando el proyecto lo permite.]]"),
+        ("[[How is the budget released?||¿Cómo se libera el presupuesto?]]", "[[In stages. Money is released as completed work is verified. The schedule for your project is written into your terms.||Por etapas. El dinero se libera al verificar el trabajo terminado. El calendario de su proyecto queda escrito en sus términos.]]"),
+        ("[[Do you fund ground-up construction in every state?||¿Financian obra nueva en todos los estados?]]", "[[New construction depends on the borrower and the state. Send an application with the property and borrower information and we will tell you where it stands.||La obra nueva depende del prestatario y del estado. Envíe una solicitud con los datos de la propiedad y del prestatario y le diremos en qué situación está.]]"),
+        ("[[Do you finance the lot?||¿Financian el terreno?]]", "[[We are open to looking at it. Include the lot in your application and we will tell you what we can do.||Estamos abiertos a revisarlo. Incluya el terreno en su solicitud y le diremos qué podemos hacer.]]"),
         ("[[What counts as heavy rehab?||¿Qué es una remodelación mayor?]]", "[[Projects that go past cosmetics: structural work, additions, full mechanical replacement or a gut renovation.||Proyectos que van más allá de lo cosmético: trabajo estructural, ampliaciones, reemplazo completo de instalaciones o una renovación total.]]"),
-        ("[[Do I need building experience?||¿Necesito experiencia construyendo?]]", "[[We need to see who is building it. An experienced licensed builder or general contractor on the project matters as much as your own résumé.||Necesitamos ver quién construye. Un constructor o contratista general con licencia y experiencia en el proyecto importa tanto como su propio historial.]]"),
+        ("[[Do I need building experience?||¿Necesito experiencia construyendo?]]", "[[It depends on the borrower and the project. Tell us about your experience and who is building, and we will tell you where the deal stands.||Depende del prestatario y del proyecto. Cuéntenos su experiencia y quién construye, y le diremos en qué situación está el proyecto.]]"),
     ])
     rows = [("[[Foundation||Cimentación]]", 100, "[[Released||Liberado]]", "done"), ("[[Framing + roof||Estructura + techo]]", 100, "[[Released||Liberado]]", "done"),
             ("[[Mechanicals||Instalaciones]]", 70, "[[Inspection booked||Inspección agendada]]", ""), ("[[Drywall + finishes||Tablaroca + acabados]]", 0, "[[Next||Siguiente]]", ""),
             ("[[Final + CO||Final + ocupación]]", 0, "[[Pending||Pendiente]]", "")]
     draws = "".join('<div class="draw"><span>%s</span><span class="bar"><i style="width:%d%%"></i></span><span class="st %s">%s</span></div>' % r for r in [(a, b, d, c) for a, b, c, d in rows])
-    return subhero("[[Construction loans||Préstamos de construcción]]", "", "[[Construction loans with draws that keep crews moving||Préstamos de construcción con desembolsos que mantienen la obra en marcha]]",
-                   "[[Ground-up builds and heavy rehab, funded in stages against completed work. Our principals build houses too, so the draw schedule is set up the way a builder needs it.||Obra nueva y remodelación mayor, fondeadas por etapas contra trabajo terminado. Nuestros socios también construyen casas, así que el calendario de desembolsos está armado como lo necesita un constructor.]]",
+    return subhero("[[Construction loans||Préstamos de construcción]]", "", "[[Construction and heavy-rehab loans, reviewed deal by deal||Préstamos de construcción y remodelación mayor, revisados caso por caso]]",
+                   "[[Heavy rehab and ground-up builds, funded in stages against completed work. Whether we can fund a new build depends on the borrower and the state, so the first step is a short application with the property and borrower information.||Remodelación mayor y obra nueva, fondeadas por etapas contra trabajo terminado. Que podamos financiar una obra nueva depende del prestatario y del estado, así que el primer paso es una solicitud corta con los datos de la propiedad y del prestatario.]]",
                    APPLY_BTN + CALC_BTN) + """
 <section class="ink"><div class="wrap split even">
   <div>
-    <span class="eyebrow">[[The draw schedule||El calendario de desembolsos]]</span>
-    <h2 style="margin:14px 0 18px">[[Finish a phase. Get inspected. Get paid.||Termine la etapa. Inspección. Pago.]]</h2>
-    <p class="lead">[[The budget is phased at closing, so everyone knows what each stage releases before the first shovel goes in.||El presupuesto se divide por etapas al cierre, para que todos sepan cuánto libera cada fase antes de empezar.]]</p>
+    <span class="eyebrow">[[How stage funding works||Cómo funciona el fondeo por etapas]]</span>
+    <h2 style="margin:14px 0 18px">[[Money is released as the work is verified||El dinero se libera al verificar el avance]]</h2>
+    <p class="lead">[[Construction and rehab budgets are paid out in stages, not all at once. The schedule for your project is set with you and written into your terms. The chart is an illustration, not a fixed schedule.||Los presupuestos de construcción y remodelación se pagan por etapas, no de una sola vez. El calendario de su proyecto se define con usted y queda escrito en sus términos. La gráfica es ilustrativa, no un calendario fijo.]]</p>
   </div>
   <div><p class="mono muted" style="font-size:12px;letter-spacing:.08em;margin-bottom:14px">[[EXAMPLE PROJECT · WEEK 11||PROYECTO DE EJEMPLO · SEMANA 11]]</p><div class="draws">%(draws)s</div></div>
 </div></section>
@@ -481,7 +480,8 @@ def p_construction():
 <section><div class="wrap split">
   <div>
     <span class="eyebrow">[[What to send||Qué enviar]]</span>
-    <h2 style="margin:14px 0 24px">[[What we need to size a build||Lo que necesitamos para dimensionar una obra]]</h2>
+    <h2 style="margin:14px 0 24px">[[Start with the property and the borrower||Empiece con la propiedad y el prestatario]]</h2>
+    <p class="lead" style="margin-bottom:24px">[[The application is all we need to begin. If you have any of these, they help us answer faster.||La solicitud es todo lo que necesitamos para empezar. Si tiene algo de esto, nos ayuda a responder más rápido.]]</p>
     <ul class="check">
       <li><b>[[Plans and permit status||Planos y estado del permiso]]</b><span>[[Drawings, plus where the permit stands.||Planos, y en qué va el permiso.]]</span></li>
       <li><b>[[Line-item budget||Presupuesto por partidas]]</b><span>[[By phase, with contractor bids where you have them.||Por etapa, con cotizaciones de contratistas si las tiene.]]</span></li>
@@ -662,7 +662,7 @@ def p_about():
     <ul class="check">
       <li><b>[[Fix and flip||Fix &amp; flip]]</b><span>[[Purchase plus rehab.||Compra más remodelación.]]</span></li>
       <li><b>[[Rentals||Rentas]]</b><span>[[DSCR loans for purchase or refinance.||Préstamos DSCR para compra o refinanciamiento.]]</span></li>
-      <li><b>[[Construction||Construcción]]</b><span>[[Ground-up and heavy rehab.||Obra nueva y remodelación mayor.]]</span></li>
+      <li><b>[[Construction||Construcción]]</b><span>[[Heavy rehab, and ground-up builds depending on borrower and state.||Remodelación mayor, y obra nueva según el prestatario y el estado.]]</span></li>
       <li><b>[[Double closings||Cierres dobles]]</b><span>[[Transactional funding for wholesalers.||Fondeo transaccional para mayoristas.]]</span></li>
     </ul>
   </div>
@@ -699,7 +699,7 @@ def p_about():
 
 def p_apply():
     return subhero("[[Apply||Aplicar]]", "", "[[Loan application||Solicitud de préstamo]]",
-                   "[[About five minutes. No Social Security number and no credit pull to get your terms.||Unos cinco minutos. Sin número de Seguro Social y sin consulta de crédito para recibir sus términos.]]") + """
+                   "[[About five minutes. Applying does not pull your credit, and this form does not ask for a Social Security number.||Unos cinco minutos. Aplicar no consulta su crédito, y este formulario no pide número de Seguro Social.]]") + """
 <section style="padding-top:8px"><div class="wrap split">
   <div class="fcard">
     <div class="wiz-prog" aria-hidden="true"><div>1 · [[Loan||Préstamo]]</div><div>2 · [[Property||Propiedad]]</div><div>3 · [[You||Usted]]</div><div>4 · [[Review||Revisar]]</div></div>
@@ -770,6 +770,7 @@ def p_apply():
     <h2 style="margin:14px 0 22px;font-size:30px">[[A person reads it today||Una persona lo lee hoy]]</h2>
     <ul class="check">
       <li><b>[[Same business day||Mismo día hábil]]</b><span>[[A decision-maker reviews complete applications and calls you.||Una persona que decide revisa las solicitudes completas y le llama.]]</span></li>
+      <li><b>[[Programs first, then credit if needed||Primero los programas, luego crédito si hace falta]]</b><span>[[We explain which programs fit. Credit is pulled only if that program needs it or you choose it.||Le explicamos qué programas encajan. El crédito se consulta solo si ese programa lo requiere o usted lo elige.]]</span></li>
       <li><b>[[Written terms||Términos por escrito]]</b><span>[[If the deal works, you get a term sheet for it.||Si el proyecto funciona, recibe una hoja de términos.]]</span></li>
       <li><b>[[Then documents||Luego documentos]]</b><span>[[Contract, scope of work, entity documents and insurance.||Contrato, alcance de obra, documentos de la entidad y seguro.]]</span></li>
     </ul>
@@ -824,7 +825,7 @@ PAGES = [
     ("dscr", p_dscr, "[[DSCR Rental Loans | ASAP Lending||Préstamos DSCR para Rentas | ASAP Lending]]",
      "[[DSCR loans for rental property: qualify on the rent, lend to your LLC, purchase or refinance. Free DSCR calculator.||Préstamos DSCR para propiedades de renta: califique con la renta, a nombre de su LLC, compra o refinanciamiento. Calculadora DSCR gratis.]]"),
     ("construction", p_construction, "[[Construction Loans for Investors | ASAP Lending||Préstamos de Construcción | ASAP Lending]]",
-     "[[Ground-up construction and heavy rehab loans funded in draws against completed work, from a lender whose principals build.||Préstamos para obra nueva y remodelación mayor fondeados por etapas contra trabajo terminado.]]"),
+     "[[Heavy rehab and ground-up construction loans funded in stages against completed work. New construction depends on borrower and state.||Préstamos para remodelación mayor y obra nueva fondeados por etapas contra trabajo terminado. La obra nueva depende del prestatario y del estado.]]"),
     ("hard-money-loans", p_hard, "[[Hard Money Loans Explained | ASAP Lending||Qué es el Dinero Privado (Hard Money) | ASAP Lending]]",
      "[[What hard money is, who uses it, how it compares to a bank loan, and how transactional funding works for wholesalers.||Qué es el dinero privado, quién lo usa, cómo se compara con un banco y cómo funciona el fondeo transaccional.]]"),
     ("calculator", p_calc, "[[Flip and DSCR Calculators | ASAP Lending||Calculadoras de Flip y DSCR | ASAP Lending]]",
@@ -834,7 +835,7 @@ PAGES = [
     ("contact", p_contact, "[[Contact ASAP Lending||Contacto | ASAP Lending]]",
      "[[Email funding@asaplending.com, call or text (913) 513-2656, or visit 7017 Oak Street, Kansas City, MO.||Escriba a funding@asaplending.com, llame o envíe un texto al (913) 513-2656, o visite 7017 Oak Street, Kansas City, MO.]]"),
     ("apply", p_apply, "[[Apply for a Loan | ASAP Lending||Solicitud de Préstamo | ASAP Lending]]",
-     "[[Five-minute online loan application for fix and flip, DSCR, construction and transactional funding. No SSN or credit pull to get terms.||Solicitud en línea de cinco minutos para fix &amp; flip, DSCR, construcción y fondeo transaccional. Sin Seguro Social ni consulta de crédito.]]"),
+     "[[Five-minute online loan application for fix and flip, DSCR, construction and transactional funding. No Social Security number on the form.||Solicitud en línea de cinco minutos para fix &amp; flip, DSCR, construcción y fondeo transaccional. El formulario no pide Seguro Social.]]"),
     ("privacy", p_privacy, "[[Privacy Policy | ASAP Lending||Política de Privacidad | ASAP Lending]]",
      "[[How ASAP Lending collects and uses the information you send.||Cómo ASAP Lending recopila y usa la información que usted envía.]]"),
 ]
